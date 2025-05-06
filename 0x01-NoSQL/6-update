@@ -1,0 +1,2 @@
+//a script that adds a new attribute to a document in the collection school
+cat 5-count | mongo your_database_name

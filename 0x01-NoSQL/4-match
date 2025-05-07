@@ -1,4 +1,3 @@
-// my comment
 // This script finds and lists all documents in the 'school' collection
 // where the 'name' attribute is equal to "ALX"
-db.school.find({name: "Holberton school"})
+db.school.find({ name: "ALX" })

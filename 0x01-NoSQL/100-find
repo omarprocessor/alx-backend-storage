@@ -1,19 +1,19 @@
 // Script to find documents where name starts with "ALX" in school collection
 
-// Get the database name from command line arguments
-var dbName = db.getName();
-
-// Use the specified database
-var db = db.getSiblingDB(dbName);
-
 // Find documents where name starts with "ALX" (case sensitive)
 var cursor = db.school.find({
   name: {
     $regex: /^ALX/
   }
+}, {
+  _id: 1,
+  name: 1
 });
 
 // Iterate through the cursor and print each document
-cursor.forEach(function(doc) {
-  printjson(doc);
-});
+while (cursor.hasNext()) {
+  printjson(cursor.next());
+}
+
+// Print "bye" at the end
+print("bye");

@@ -1,19 +1,2 @@
-// Script to find documents where name starts with "ALX" in school collection
-
-// Find documents where name starts with "ALX" (case sensitive)
-var cursor = db.school.find({
-  name: {
-    $regex: /^ALX/
-  }
-}, {
-  _id: 1,
-  name: 1
-});
-
-// Iterate through the cursor and print each document
-while (cursor.hasNext()) {
-  printjson(cursor.next());
-}
-
-// Print "bye" at the end
-print("bye");
+// lists all documents with name starting by ALX in the collection school
+db.school.find({name: {$regex: /^ALX/}})
